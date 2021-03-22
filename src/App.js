@@ -1,5 +1,6 @@
 import './App.css';
 import Greeter from './components/Greeter';
+import Timestamp from './components/Timestamp';
 
 const names = [
   'Terry',
@@ -13,11 +14,12 @@ function App() {
   return (
     <div className="App">
       <h1 className='greeting'>Hello React!</h1>
-      <Greeter />
-      <Greeter name="Jake" />
-      <Greeter name="Bob" />
-      <Greeter name="Steve" />
-      <Greeter name="Sharon" />
+      {
+        names.map((name, i) => {
+          return <Greeter name={name} key={i}/>
+        })
+      }
+      <Timestamp />
     </div>
   );
 }
